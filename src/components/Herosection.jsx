@@ -8,23 +8,23 @@ import Arrow from "../static/next.png"
 const Herosection = () => {
   const data = useStaticQuery(graphql`
     query {
-      mens: file(relativePath: { eq: "images/menbg.jpeg" }) {
+      mens: file(relativePath: { eq: "images/man.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 400, maxHeight: 250) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      womens: file(relativePath: { eq: "images/womenbg.jpeg" }) {
+      womens: file(relativePath: { eq: "images/woman.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 400, maxHeight: 250) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      shop: file(relativePath: { eq: "images/shopbg.jpeg" }) {
+      shop: file(relativePath: { eq: "images/mountain.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 400, maxHeight: 320) {
+          fluid(maxWidth: 450, maxHeight: 450) {
             ...GatsbyImageSharpFluid
           }
         }
