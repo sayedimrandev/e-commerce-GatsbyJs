@@ -1,14 +1,17 @@
 import React from "react"
 import "../styles/navbar.css"
 import Logo from "../static/shoppingLogo.jpg"
+import { Link } from "gatsby"
 
 const Navbar = () => {
   return (
     <section className="container">
       <nav>
-        <div id="logo">
-          <img className="logo" src={Logo} alt="shoppingLogo" />
-        </div>
+        <Link style={{ margin: `0px`, padding: `0px` }} to="/">
+          <div id="logo">
+            <img className="logo" src={Logo} alt="shoppingLogo" />
+          </div>
+        </Link>
         <label
           htmlFor="drop"
           style={{ fontSize: `3rem`, textAlign: `right` }}
@@ -22,7 +25,7 @@ const Navbar = () => {
             <label htmlFor="drop-1" className="toggle">
               Womens +
             </label>
-            <a href="#">Womens</a>
+            <Link to="/womens">Womens</Link>
             <input type="checkbox" id="drop-1" />
             <ul>
               <li>
@@ -43,7 +46,7 @@ const Navbar = () => {
             <label for="drop-2" className="toggle">
               Mens +
             </label>
-            <a href="#">Mens</a>
+            <Link to="/mens">Mens</Link>
             <input type="checkbox" id="drop-2" />
             <ul>
               <li>
