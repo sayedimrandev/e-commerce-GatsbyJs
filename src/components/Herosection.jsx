@@ -8,14 +8,14 @@ import Arrow from "../static/next.png"
 const Herosection = () => {
   const data = useStaticQuery(graphql`
     query {
-      mens: file(relativePath: { eq: "images/man.jpeg" }) {
+      mens: file(relativePath: { eq: "images/mens/man.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 400, maxHeight: 250) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      womens: file(relativePath: { eq: "images/woman.jpeg" }) {
+      womens: file(relativePath: { eq: "images/womens/woman.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 400, maxHeight: 250) {
             ...GatsbyImageSharpFluid
@@ -43,14 +43,16 @@ const Herosection = () => {
           fluid={data.mens.childImageSharp.fluid}
           alt="shopping"
         />
-        <button className={heroStyles.button1}>
-          Shop Men{" "}
-          <img
-            src={Arrow}
-            style={{ width: `3rem`, height: `2rem`, paddingLeft: `25px` }}
-            alt="arrow"
-          />{" "}
-        </button>
+        <Link style={{ textDecoration: `none` }} to="/mens">
+          <button className={heroStyles.button1}>
+            Shop Men{" "}
+            <img
+              src={Arrow}
+              style={{ width: `3rem`, height: `2rem`, paddingLeft: `25px` }}
+              alt="arrow"
+            />{" "}
+          </button>
+        </Link>
       </section>
       <section className={heroStyles.womens}>
         <Img
@@ -58,14 +60,16 @@ const Herosection = () => {
           fluid={data.womens.childImageSharp.fluid}
           alt="shopping"
         />
-        <button className={heroStyles.button2}>
-          Shop Women
-          <img
-            src={Arrow}
-            style={{ width: `3rem`, height: `2rem`, paddingLeft: `25px` }}
-            alt="arrow"
-          />{" "}
-        </button>
+        <Link style={{ textDecoration: `none` }} to="/womens">
+          <button className={heroStyles.button2}>
+            Shop Women
+            <img
+              src={Arrow}
+              style={{ width: `3rem`, height: `2rem`, paddingLeft: `25px` }}
+              alt="arrow"
+            />{" "}
+          </button>
+        </Link>
       </section>
     </BackgroundImage>
   )
