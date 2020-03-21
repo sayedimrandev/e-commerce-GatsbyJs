@@ -22,28 +22,28 @@ const Cards = ({ fluid, slug, title }) => {
 const Recommended = () => {
   const data = useStaticQuery(graphql`
     query {
-      shirt1: file(relativePath: { eq: "images/shirt1.jpeg" }) {
+      shirt1: file(relativePath: { eq: "images/mens/shirts/shirt1.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 450, maxHeight: 450) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      shirt2: file(relativePath: { eq: "images/shirt2.jpeg" }) {
+      shirt2: file(relativePath: { eq: "images/mens/shirts/shirt2.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 450, maxHeight: 450) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      shirt3: file(relativePath: { eq: "images/shirt3.jpeg" }) {
+      shirt3: file(relativePath: { eq: "images/mens/shirts/shirt3.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 450, maxHeight: 450) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      jacket1: file(relativePath: { eq: "images/jacket1.jpeg" }) {
+      jacket1: file(relativePath: { eq: "images/mens/hoodies/jacket1.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 450, maxHeight: 450) {
             ...GatsbyImageSharpFluid
