@@ -50,7 +50,7 @@ const Shirts = () => {
             <section key={shirt._id}>
               <Card
                 title={shirt.name}
-                link={shirt._id}
+                link={`/app/mens/shirt/${shirt._id}`}
                 src={shirt.Image}
                 price={shirt.price}
               />
