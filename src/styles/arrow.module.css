@@ -1,0 +1,28 @@
+.container {
+  text-align: end;
+  position: absolute;
+  top: 83%;
+  right: 8%;
+}
+
+.icon {
+  width: 5rem;
+  height: 5rem;
+  position: fixed;
+  transition: 0.5 ease-in all;
+  transition-delay: 0.1s;
+  transform: rotateZ(-40deg);
+  z-index: 2;
+}
+
+.icon:hover {
+  transition-delay: 0.1s;
+  transition: 0.5 ease-in all;
+  transform: rotateZ(0deg);
+}
+
+.button {
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+}
