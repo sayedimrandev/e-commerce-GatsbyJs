@@ -29,16 +29,23 @@ const Navbar = () => {
             <input type="checkbox" id="drop-1" />
             <ul>
               <li>
-                <a href="#">Tops</a>
+                <Link to="/products/womens/tops">Tops</Link>
               </li>
               <li>
-                <a href="#">Head-Footwares</a>
+                <Link to="/products/womens/shirts-Tshirts">Shirts-Tshirts</Link>
               </li>
               <li>
-                <a href="#">Jackets-Hoodies</a>
+                <Link to="/products/womens/headwares-scarves">
+                  Headwares-Scarves
+                </Link>
               </li>
               <li>
-                <a href="#">Accessories</a>
+                <Link to="/products/womens/hoodies-jackets">
+                  Jackets-Hoodies
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/womens/accessories">Accessories</Link>
               </li>
             </ul>
           </li>
@@ -50,16 +57,16 @@ const Navbar = () => {
             <input type="checkbox" id="drop-2" />
             <ul>
               <li>
-                <a href="#">Jackets-Hoodies</a>
+                <Link to="/products/mens/hoodies-jackets">Jackets-Hoodies</Link>
               </li>
               <li>
-                <a href="#">Shirts-Tshirts</a>
+                <Link to="/products/mens/shirts-Tshirts">Shirts-Tshirts</Link>
               </li>
               <li>
-                <a href="#">Head-Footwares</a>
+                <Link to="/products/mens/head-footwares">Head-Footwares</Link>
               </li>
               <li>
-                <a href="#">Accessories</a>
+                <Link to="/products/mens/accessories">Accessories</Link>
               </li>
             </ul>
           </li>
