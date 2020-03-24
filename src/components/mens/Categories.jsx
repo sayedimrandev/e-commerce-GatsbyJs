@@ -41,15 +41,6 @@ const Categories = () => {
           }
         }
       }
-      footwares: file(
-        relativePath: { eq: "images/mens/footwares/shoes.jpeg" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 400, maxHeight: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
       accessories: file(
         relativePath: { eq: "images/mens/accessories/accessories.jpg" }
       ) {
@@ -67,27 +58,22 @@ const Categories = () => {
       <section className={styles.container}>
         <Card
           fluid={data.shirts.childImageSharp.fluid}
-          src={`/app/mens/shirts`}
+          src={`/products/mens/shirts-Tshirts`}
           title="Shirts and T-shirts"
         />
         <Card
           fluid={data.hoodies.childImageSharp.fluid}
-          src={`/app/mens/hoodies`}
+          src={`/products/mens/hoodies-jackets`}
           title="Hoodies and Jackets"
         />
         <Card
           fluid={data.headwares.childImageSharp.fluid}
-          src={`#`}
-          title="Headwares"
-        />
-        <Card
-          fluid={data.footwares.childImageSharp.fluid}
-          src={`#`}
-          title="Footwares and Shoes"
+          src={"/products/mens/head-footwares"}
+          title="Headwares and Footwares"
         />
         <Card
           fluid={data.accessories.childImageSharp.fluid}
-          src={`#`}
+          src={"/products/mens/accessories"}
           title="All Accessories"
         />
       </section>

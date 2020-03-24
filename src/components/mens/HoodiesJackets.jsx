@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
-import styles from "../../styles/mens/shirts.module.css"
 import ClipLoader from "react-spinners/ClipLoader"
+import styles from "../../styles/mens/shirts.module.css"
 
 const Fallback = ({ loading }) => {
   return (
@@ -24,35 +24,35 @@ const Card = ({ src, title, link, price }) => {
   )
 }
 
-const Shirts = () => {
-  const [shirts, setShirts] = useState([])
+const HoodiesJackets = () => {
+  const [hoodies, setHoodies] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("http://localhost:3000/mens/shirts")
+    async function getData() {
+      const response = await fetch("http://localhost:3000/mens/hoodies")
       const data = await response.json()
-      console.log(data.data)
-      setShirts(data.data)
+      console.log(data.product)
+      setHoodies(data.product)
       setLoading(false)
     }
-    fetchData()
+    getData()
   }, [])
 
   return (
     <section className={styles.main}>
-      <h1 className={styles.heading}>Shirts Collection</h1>
+      <h1 className={styles.heading}>Hoodies and Jackets Collections</h1>
       <section className={styles.container}>
         {loading ? (
           <Fallback loading={loading} />
         ) : (
-          shirts.map(shirt => (
-            <section key={shirt._id}>
+          hoodies.map(hoodie => (
+            <section key={hoodie._id}>
               <Card
-                title={shirt.name}
-                link={`/products/mens/shirt/${shirt._id}`}
-                src={shirt.Image}
-                price={shirt.price}
+                title={hoodie.name}
+                link={`/products/mens/hoodies-jackets/${hoodie._id}`}
+                src={hoodie.Image}
+                price={hoodie.price}
               />
             </section>
           ))
@@ -62,4 +62,4 @@ const Shirts = () => {
   )
 }
 
-export default Shirts
+export default HoodiesJackets
