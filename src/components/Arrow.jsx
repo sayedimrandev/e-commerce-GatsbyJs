@@ -1,6 +1,5 @@
 import React from "react"
 import Icon from "../static/chevron.png"
-import { Link } from "gatsby"
 import styles from "../styles/arrow.module.css"
 
 const Arrow = () => {

@@ -30,18 +30,17 @@ const Shirts = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:3000/mens/shirts")
+      const response = await fetch("http://localhost:3000/womens/shirts")
       const data = await response.json()
-      console.log(data.data)
-      setShirts(data.data)
+      console.log(data.product)
+      setShirts(data.product)
       setLoading(false)
     }
     fetchData()
   }, [])
-
   return (
     <section className={styles.main}>
-      <h1 className={styles.heading}>Shirts Collection</h1>
+      <h1 className={styles.heading}>Women Shirts Collection</h1>
       <section className={styles.container}>
         {loading ? (
           <Fallback loading={loading} />
@@ -50,7 +49,7 @@ const Shirts = () => {
             <section key={shirt._id}>
               <Card
                 title={shirt.name}
-                link={`/products/mens/shirt/${shirt._id}`}
+                link={`/products/womens/shirts-Tshirts/${shirt._id}`}
                 src={shirt.Image}
                 price={shirt.price}
               />

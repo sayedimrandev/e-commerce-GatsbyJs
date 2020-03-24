@@ -6,8 +6,8 @@
 }
 
 .icon {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   position: fixed;
   transition: 0.5 ease-in all;
   transition-delay: 0.1s;

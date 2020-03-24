@@ -31,7 +31,7 @@ const Offers = () => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
+  useEffect(() => { 
     async function getData() {
       const response = await fetch("http://localhost:3000/mens/shirts/offers")
       const data = await response.json()
@@ -54,7 +54,7 @@ const Offers = () => {
                 title={product.name}
                 src={product.Image}
                 price={product.price}
-                link={product._id}
+                link={`/products/mens/shirt/${product._id}`}
                 offer={product.offers}
               />
             </section>
