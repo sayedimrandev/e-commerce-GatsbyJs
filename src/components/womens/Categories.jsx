@@ -70,32 +70,32 @@ const Categories = () => {
       <section className={styles.container}>
         <Card
           fluid={data.tops.childImageSharp.fluid}
-          src={`/app/womens/shirts`}
+          src={`/products/womens/tops`}
           title="Tops"
         />
         <Card
           fluid={data.shirts.childImageSharp.fluid}
-          src={`/app/womens/hoodies`}
+          src={`/products/womens/shirts-Tshirts`}
           title="Shirts and T-shirts"
         />
         <Card
           fluid={data.jackets.childImageSharp.fluid}
-          src={`#`}
+          src={"/products/womens/hoodies-jackets"}
           title="Jackets and Hoodies"
         />
         <Card
           fluid={data.headwares.childImageSharp.fluid}
-          src={`#`}
+          src={"/products/womens/headwares-scarves"}
           title="Headwares and Scarves"
         />
         <Card
           fluid={data.footwares.childImageSharp.fluid}
-          src={`#`}
+          src={"/products/womens/footwares-sandals"}
           title="Footwares"
         />
         <Card
           fluid={data.accessories.childImageSharp.fluid}
-          src={`#`}
+          src={"/products/womens/accessories"}
           title="All Accessories"
         />
       </section>
