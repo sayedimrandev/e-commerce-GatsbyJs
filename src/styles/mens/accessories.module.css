@@ -1,0 +1,92 @@
+.main {
+  background-color: rgb(174, 194, 174);
+  margin: 0;
+  padding: 10px 0px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.filter-container {
+  background-color: rgb(213, 221, 221);
+  padding: 0px 15px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  flex: 1;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-heading {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 20px 0px;
+}
+
+.label {
+  font-size: 1.5rem;
+  padding: 10px 0px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: 18rem;
+  margin: 10px 0px;
+}
+
+.image {
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  margin: 0px;
+  padding: 20px 0px 10px 0px;
+}
+
+.price {
+  padding-bottom: 10px;
+  font-size: 22px;
+  font-style: italic;
+}
+
+.button {
+  font-size: 17px;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 0px;
+  background-color: black;
+  color: #fff;
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex: 3;
+}
+
+.header {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 20px 0px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 18px;
+}
