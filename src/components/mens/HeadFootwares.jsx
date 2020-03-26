@@ -28,7 +28,6 @@ const HeadFootwares = () => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [category, setCategory] = useState("")
-  // const [plain, setPlain] = useState("")
 
   useEffect(() => {
     async function fetchData() {
