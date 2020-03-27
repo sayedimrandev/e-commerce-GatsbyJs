@@ -24,10 +24,19 @@ const Card = ({ src, title, link, price }) => {
   )
 }
 
+const Offers = ({ offers }) => {
+  return (
+    <section className={styles.offerContainer}>
+      <h1 className={styles.offers}> {offers} OFF </h1>
+    </section>
+  )
+}
+
 const HeadFootwares = () => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [category, setCategory] = useState("")
+  const [popular, setPopular] = useState([])
 
   useEffect(() => {
     async function fetchData() {
@@ -46,6 +55,19 @@ const HeadFootwares = () => {
     console.log(e.target.value)
     setCategory(e.target.value)
   }
+
+  useEffect(() => {
+    async function getPopularProducts() {
+      const response = await fetch(
+        "http://localhost:3000/mens/headwares/offers"
+      )
+      const data = await response.json()
+      console.log(data.product)
+      setPopular(data.product)
+      setLoading(false)
+    }
+    getPopularProducts()
+  }, [])
 
   return (
     <section className={styles.main}>
@@ -107,6 +129,26 @@ const HeadFootwares = () => {
                   src={product.Image}
                   price={product.price}
                 />
+              </section>
+            ))
+          )}
+        </section>
+      </section>
+      <section className={styles.popularContainer}>
+        <h1 className={styles.header}>Top Discounts</h1>
+        <section className={styles.cardContainer}>
+          {loading ? (
+            <Fallback loading={loading} />
+          ) : (
+            popular.map(item => (
+              <section key={item._id}>
+                <Card
+                  src={item.Image}
+                  title={item.name}
+                  price={item.price}
+                  link={`/products/mens/head-footwares/${item._id}`}
+                />
+                <Offers key={item._id} offers={item.offers} />
               </section>
             ))
           )}
