@@ -9,6 +9,16 @@
   justify-content: space-evenly;
 }
 
+.popular-container {
+  padding: 10px 0px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .filter-container {
   background-color: rgb(213, 221, 221);
   padding: 0px 15px;
@@ -47,6 +57,17 @@
 
 .image {
   width: 100%;
+}
+
+.offer-container {
+  text-align: center;
+}
+
+.offers {
+  font-size: 2rem;
+  padding: 10px 0px;
+  margin: 0;
+  color: rgb(2, 68, 88);
 }
 
 .title {
