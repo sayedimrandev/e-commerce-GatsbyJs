@@ -6,6 +6,7 @@
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,11 +16,5 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    // {
-    //   resolve: `gatsby-plugin-create-client-paths`,
-    //   options: {
-    //     prefixes: [`/products/*`],
-    //   },
-    // },
   ],
 }
