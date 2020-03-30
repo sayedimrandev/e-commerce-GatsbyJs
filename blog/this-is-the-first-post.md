@@ -5,8 +5,9 @@ title: This is The First Post
 description: Some cool description
 featuredimage: assets/wjacket12.jpeg
 tags:
-  - '#jacket #sweaters'
+  - "#jacket #sweaters"
 ---
+
 This is the body of the Post
 
 You can Add Literally anything Here
