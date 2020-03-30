@@ -10,26 +10,24 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "blog",
-        path: `${__dirname}/blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "assets",
         path: `${__dirname}/static/assets`,
+        name: "assets",
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "data",
-        path: `${__dirname}/data`,
+        path: `${__dirname}/blog`,
+        name: "blog",
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data`,
+        name: "data",
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -38,12 +36,14 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 600,
+              maxWidth: 500,
               linkImagesToOriginal: false,
             },
           },
         ],
       },
     },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
   ],
 }

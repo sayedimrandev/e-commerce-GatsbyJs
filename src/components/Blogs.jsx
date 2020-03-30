@@ -1,22 +1,41 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styles from "../styles/blogs.module.css"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
+
+const Cards = ({ fluid, link, title, description, html }) => {
+  return (
+    <section className={styles.card}>
+      <section className="img">
+        <img className={styles.image} src={fluid} alt="some text" />
+        <section className="info">
+          <h1 className={styles.title}> {title} </h1>
+          <p className={styles.description}> {description} </p>
+          <Link to={link}>
+            <button className={styles.button} type="button">
+              Read More...
+            </button>
+          </Link>
+          {/* <section dangerouslySetInnerHTML={{ __html: html }}></section> */}
+        </section>
+      </section>
+    </section>
+  )
+}
 
 const Blogs = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+      allMarkdownRemark {
         totalCount
         edges {
           node {
             id
             frontmatter {
-              date(formatString: "MMMM Do, YYYY")
-              path
-              description
-              title
               thumbnail
+              title
+              description
+              path
             }
             html
           }
@@ -26,18 +45,24 @@ const Blogs = () => {
   `)
   return (
     <React.Fragment>
-      <section className="main">
+      <section className={styles.main}>
         <h1 className={styles.heading}>Our Blogs</h1>
         <section className={styles.blogContainer}>
-          <h4> Total Posts - {data.allMarkdownRemark.totalCount} </h4>
+          <h4 className={styles.heading2}>
+            {" "}
+            Total Posts - {data.allMarkdownRemark.totalCount}{" "}
+          </h4>
           <ul className={styles.posts}>
             {data.allMarkdownRemark.edges.map(({ node }) => {
               return (
                 <section key={node.id} className={styles.singlePost}>
-                  <h1 className={styles.title}> {node.frontmatter.title} </h1>
-                  <p className={styles.description}>
-                    {node.frontmatter.description}
-                  </p>
+                  <Cards
+                    fluid={node.frontmatter.thumbnail}
+                    title={node.frontmatter.title}
+                    description={node.frontmatter.description}
+                    link={node.frontmatter.path}
+                    // html={node.html}
+                  />
                 </section>
               )
             })}
