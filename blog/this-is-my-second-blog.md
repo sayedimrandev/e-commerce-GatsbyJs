@@ -5,9 +5,10 @@ title: This is my Second Blog
 description: The second blog's description goes here
 thumbnail: assets/head12.jpg
 tags:
-  - '#jackets #man #hoodies'
+  - "#jackets #man #hoodies"
 ---
-This is the Mastam Body 
+
+This is the Mastam Body
 
 # Heading 1
 
