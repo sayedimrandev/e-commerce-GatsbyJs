@@ -1,0 +1,31 @@
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-post {
+  padding: 10px 5rem;
+  background-color: rgb(218, 211, 211);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.single-post:hover {
+  background-color: rgb(204, 197, 197);
+}
+
+.heading {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.3rem;
+  margin: 20px 0px;
+}
+
+.description {
+  font-size: 1.2rem;
+}
