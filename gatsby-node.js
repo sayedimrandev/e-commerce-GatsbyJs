@@ -1,43 +1,30 @@
-// const { fmImagesToRelative } = require("gatsby-remark-relative-images")
-// const path = require("path")
+const path = require("path")
 
-// exports.onCreateNode = ({ node }) => {
-//   fmImagesToRelative(node)
-// }
+module.exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
 
-// exports.createPages = async ({ actions, graphql }) => {
-//   const { createPage } = actions
-//   const templatePath = path.resolve(`./blog/templates/BlogTemplate.jsx`)
+  const result = await graphql(`
+    query {
+      allAllblogsJson {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
 
-//   const res = await graphql(`
-//     query {
-//       allMarkdownRemark {
-//         edges {
-//           node {
-//             id
-//             html
-//             frontmatter {
-//               path
-//               title
-//               date
-//               description
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   res.data.allMarkdownRemark.edges.forEach(({ node }) => {
-//     createPage({
-//       component: templatePath,
-//       path: node.frontmatter.path,
-//       context: {
-//         // slug: node.frontmatter.path,
-//       },
-//     })
-//   })
-// }
+  result.data.allAllblogsJson.edges.forEach(({ node }) => {
+    createPage({
+      path: node.slug,
+      component: require.resolve("./src/templates/BlogTemplate.jsx"),
+      context: {
+        slug: node.slug,
+      },
+    })
+  })
+}
 
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
