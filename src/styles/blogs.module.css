@@ -1,30 +1,50 @@
 .main {
-  background-color: rgba(6, 105, 105, 0.801);
+  background-color: rgb(198, 248, 240);
   margin: 0;
   padding: 10px 0px;
-}
-
-.blog-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.card {
-  width: 18rem;
-  cursor: pointer;
 }
 
 .image {
   width: 100%;
 }
 
+.posts {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  /* padding: 50px 0; */
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0 80px 0;
+  /* position: relative; */
+}
+
+.background {
+  padding: 10rem 18rem;
+  /* width: 100vw; */
+  /* position: absolute; */
+  /* margin: 20px 0; */
+}
+
 .single-post {
-  padding: 0 0 10px 0;
+  width: 27rem;
+  /* padding: 80 0 10px 0; */
+  /* padding: 0 10rem; */
   background-color: rgb(218, 211, 211);
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
+  margin-top: -15rem;
+  z-index: 1;
+  /* margin: 20px 0; */
+  /* top: 40%; */
+  /* bottom: 40%; */
+  /* position: relative; */
 }
 
 .single-post:hover {
@@ -32,8 +52,9 @@
 }
 
 .heading {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
+  color: #050507;
 }
 
 .heading2 {
@@ -53,8 +74,9 @@
 
 .button {
   padding: 10px 20px;
-  margin: 0px 5rem;
+  margin: 5px 8px;
   border: none;
+  font-size: 20px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.836);
   color: #fff;
