@@ -1,6 +1,6 @@
 .main {
   padding: 10px 0px;
-  background-color: rgba(215, 240, 248, 0.863);
+  background-color: rgb(156, 215, 238);
 }
 
 .image {
@@ -8,7 +8,6 @@
 }
 
 .card {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   margin: 10px 0px;
@@ -33,17 +32,18 @@
 }
 
 .button {
-  border-radius: 5px;
-  margin-bottom: 2px;
   padding: 5px 30px;
+  margin: 5px 8px;
   border: none;
-  font-size: 19px;
-  background-color: rgb(176, 236, 236);
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.836);
+  color: #fff;
   cursor: pointer;
 }
 
-.button:hover {
-  background-color: rgb(88, 165, 165);
+button:hover {
+  background-color: black;
 }
 
 .title {

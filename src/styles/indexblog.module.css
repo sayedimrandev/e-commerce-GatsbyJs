@@ -1,0 +1,64 @@
+.main {
+  padding: 10px 0;
+  background-image: url(../../data/images/blog2.jpeg);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  width: 30rem;
+  background-color: rgb(224, 221, 221);
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  margin: 30px 0 10px 0;
+}
+
+.description {
+  font-size: 20px;
+  margin: 10px 0;
+  line-height: 1.4;
+  padding: 0px 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 5px 8px;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.836);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
