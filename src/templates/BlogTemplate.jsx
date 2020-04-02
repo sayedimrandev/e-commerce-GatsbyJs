@@ -6,7 +6,7 @@ import styles from "../styles/blog.module.css"
 
 export const query = graphql`
   query($slug: String!) {
-    allblogsJson(slug: { eq: $slug }) {
+    blogpostsJson(slug: { eq: $slug }) {
       description
       title
       date
@@ -30,14 +30,14 @@ const BlogTemplate = ({ data }) => {
         <section className={styles.imgContainer}>
           <Image
             className={styles.image}
-            fluid={data.allblogsJson.thumbnail.childImageSharp.fluid}
+            fluid={data.blogpostsJson.thumbnail.childImageSharp.fluid}
           />
         </section>
-        <h2 className={styles.title}> {data.allblogsJson.title} </h2>
-        <p className={styles.description}> {data.allblogsJson.description} </p>
+        <h2 className={styles.title}> {data.blogpostsJson.title} </h2>
+        <p className={styles.description}> {data.blogpostsJson.description} </p>
         <section
           className={styles.body}
-          dangerouslySetInnerHTML={{ __html: data.allblogsJson.body }}
+          dangerouslySetInnerHTML={{ __html: data.blogpostsJson.body }}
         ></section>
       </section>
     </Layout>
