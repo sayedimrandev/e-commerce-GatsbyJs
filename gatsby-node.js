@@ -5,7 +5,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     query {
-      allAllblogsJson {
+      allBlogpostsJson {
         edges {
           node {
             slug
@@ -15,7 +15,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  result.data.allAllblogsJson.edges.forEach(({ node }) => {
+  result.data.allBlogpostsJson.edges.forEach(({ node }) => {
     createPage({
       path: node.slug,
       component: require.resolve("./src/templates/BlogTemplate.jsx"),

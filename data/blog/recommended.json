@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "slug": "/products/mens/shirt/5e763196b0e28d0b4eb4d13d",
+    "title": "Beautiful Shirt",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "image": "../images/mens/shirts/shirt4.jpeg"
+  },
+  {
+    "id": 2,
+    "slug": "/products/mens/hoodies-jackets/5e7a33eadcc1d41bea495111",
+    "title": "Beautilful Jacket",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "image": "../images/mens/hoodies/hoodie4.jpeg"
+  },
+  {
+    "id": 3,
+    "slug": "/products/mens/head-footwares/5e7ca12f84e30f169feeb661",
+    "title": "Awesome Women Footware ",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "image": "../images/womens/wfootwares.jpeg"
+  },
+  {
+    "id": 4,
+    "slug": "/products/mens/accessories/5e7cf5a327a00e13503446cf",
+    "title": "All In One Accessories",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "image": "../images/mens/accessories/accessories.jpg"
+  }
+]

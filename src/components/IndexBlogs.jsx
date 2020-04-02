@@ -23,7 +23,7 @@ const Cards = ({ fluid, link, title, description }) => {
 const IndexBlogs = () => {
   const data = useStaticQuery(graphql`
     query {
-      allAllblogsJson(limit: 2, sort: { fields: date, order: DESC }) {
+      allBlogpostsJson(limit: 2, sort: { fields: date, order: DESC }) {
         edges {
           node {
             title
@@ -48,7 +48,7 @@ const IndexBlogs = () => {
     <section className={styles.main}>
       <h1 className={styles.heading}>Our Blogs</h1>
       <section className={styles.blogContainer}>
-        {data.allAllblogsJson.edges.map(({ node }) => {
+        {data.allBlogpostsJson.edges.map(({ node }) => {
           return (
             <Cards
               fluid={node.thumbnail.childImageSharp.fluid}

@@ -7,7 +7,7 @@ import styles from "../styles/blogs.module.css"
 const Blogs = () => {
   const data = useStaticQuery(graphql`
     query {
-      allAllblogsJson {
+      allBlogpostsJson {
         edges {
           node {
             description
@@ -39,7 +39,7 @@ const Blogs = () => {
     <section className={styles.main}>
       <h1 className={styles.heading}>Our Popular Blogs</h1>
       <ul className={styles.posts}>
-        {data.allAllblogsJson.edges.map(({ node }) => {
+        {data.allBlogpostsJson.edges.map(({ node }) => {
           return (
             <section className={styles.postContainer}>
               <BackgroundImage
