@@ -89,7 +89,7 @@ nav ul ul {
   position: absolute;
   /* has to be the same number as the "line-height" of "nav a" */
   top: 60px;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Display Dropdowns on Hover */
