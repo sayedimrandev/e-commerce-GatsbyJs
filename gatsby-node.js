@@ -1,6 +1,31 @@
 const path = require("path")
 
-module.exports.createPages = async ({ graphql, actions }) => {
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  const typeDefs = `
+    type BlogpostsJson implements Node {
+      title : String!
+      slug : String!
+      description: String!
+      body : String!
+      date : Date
+      thumbnail : File!
+      backgroundImage : File!
+    }
+  
+    type RecommendedJson implements Node{
+      slug : String!
+      title: String!
+      description: String!
+      image : File!
+      
+    }
+  `
+  createTypes(typeDefs)
+}
+
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const result = await graphql(`
