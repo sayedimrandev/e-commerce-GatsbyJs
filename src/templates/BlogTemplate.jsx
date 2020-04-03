@@ -4,25 +4,6 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import styles from "../styles/blog.module.css"
 
-export const query = graphql`
-  query($slug: String!) {
-    blogpostsJson(slug: { eq: $slug }) {
-      description
-      title
-      date
-      id
-      body
-      thumbnail {
-        childImageSharp {
-          fluid(maxWidth: 600, maxHeight: 250) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  }
-`
-
 const BlogTemplate = ({ data }) => {
   return (
     <Layout>
@@ -45,3 +26,22 @@ const BlogTemplate = ({ data }) => {
 }
 
 export default BlogTemplate
+
+export const query = graphql`
+  query($slug: String!) {
+    blogpostsJson(slug: { eq: $slug }) {
+      description
+      title
+      date
+      id
+      body
+      thumbnail {
+        childImageSharp {
+          fluid(maxWidth: 600, maxHeight: 250) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  }
+`

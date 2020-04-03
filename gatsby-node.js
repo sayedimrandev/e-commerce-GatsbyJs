@@ -12,7 +12,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       date : Date
       thumbnail : File!
       backgroundImage : File!
-    }
+    } 
   
     type RecommendedJson implements Node{
       slug : String!
