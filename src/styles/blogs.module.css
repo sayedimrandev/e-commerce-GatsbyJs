@@ -86,3 +86,15 @@
 button:hover {
   background-color: black;
 }
+
+/* Blog Hero Styling */
+.card {
+  width: 25rem;
+  background-color: rgb(250, 247, 247);
+  border-radius: 5px;
+}
+
+.hero-container {
+  margin-left: 70px;
+  padding-top: 25px;
+}
