@@ -19,6 +19,12 @@
   flex-wrap: wrap;
 }
 
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .filter-container {
   background-color: rgb(213, 221, 221);
   padding: 0px 15px;
