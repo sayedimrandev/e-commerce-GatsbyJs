@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styles from "../../styles/mens/shirts.module.css"
 import ClipLoader from "react-spinners/ClipLoader"
+import Pagination from "../../components/Pagination"
 
 const Fallback = ({ loading }) => {
   return (
@@ -37,6 +38,8 @@ const Shirts = () => {
   const [loading, setLoading] = useState(true)
   const [category, setCategory] = useState("")
   const [popular, setPopular] = useState([])
+  const [postsperPage] = useState(6)
+  const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     async function fetchData() {
@@ -66,6 +69,14 @@ const Shirts = () => {
     }
     getPopularProducts()
   }, [])
+
+  //Getting Current Posts
+  const indexOfLastPost = currentPage * postsperPage
+  const indexOfFirstPost = indexOfLastPost - postsperPage
+  const currentPosts = shirts.slice(indexOfFirstPost, indexOfLastPost)
+
+  //Changing Pages
+  const paginate = number => setCurrentPage(number)
 
   return (
     <section className={styles.main}>
@@ -119,7 +130,7 @@ const Shirts = () => {
           {loading ? (
             <Fallback loading={loading} />
           ) : (
-            shirts.map(shirt => (
+            currentPosts.map(shirt => (
               <section key={shirt._id}>
                 <Card
                   title={shirt.name}
@@ -131,6 +142,13 @@ const Shirts = () => {
             ))
           )}
         </section>
+      </section>
+      <section className={styles.paginationContainer}>
+        <Pagination
+          postsPerPage={postsperPage}
+          totalPosts={shirts.length}
+          paginate={paginate}
+        />
       </section>
       <section className={styles.popularContainer}>
         <h1 className={styles.header}>Top Discounts</h1>
