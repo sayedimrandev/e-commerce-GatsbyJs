@@ -19,6 +19,12 @@
   flex: 1;
 }
 
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .popular-container {
   padding: 10px 0px;
 }
