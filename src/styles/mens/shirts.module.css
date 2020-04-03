@@ -19,6 +19,12 @@
   flex: 1;
 }
 
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .popular-container {
   padding: 10px 0px;
 }
@@ -27,6 +33,13 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex: 3;
 }
 
 .filters {
@@ -59,7 +72,6 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   border: 1px solid black;
   width: 18rem;
@@ -97,13 +109,6 @@
   text-align: center;
   font-size: 2.5rem;
   font-family: Georgia, "Times New Roman", Times, serif;
-}
-
-.product-container {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  flex: 3;
 }
 
 .header {
