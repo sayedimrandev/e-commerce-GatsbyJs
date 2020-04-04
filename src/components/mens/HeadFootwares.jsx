@@ -47,7 +47,6 @@ const HeadFootwares = () => {
         `http://localhost:3000/mens/headwares/?category=${category}`
       )
       const data = await response.json()
-      console.log(data.product)
       setProducts(data.product)
       setLoading(false)
     }
@@ -55,7 +54,6 @@ const HeadFootwares = () => {
   }, [category])
 
   const handleChange = e => {
-    console.log(e.target.value)
     setCategory(e.target.value)
   }
 
@@ -65,7 +63,6 @@ const HeadFootwares = () => {
         "http://localhost:3000/mens/headwares/offers"
       )
       const data = await response.json()
-      console.log(data.product)
       setPopular(data.product)
       setLoading(false)
     }
@@ -93,7 +90,7 @@ const HeadFootwares = () => {
               <input
                 type="checkbox"
                 value=""
-                onChange={handleChange}
+                onClick={handleChange}
                 className={styles.checkbox}
               />
             </label>
@@ -102,7 +99,7 @@ const HeadFootwares = () => {
               <input
                 type="checkbox"
                 value="plain"
-                onChange={handleChange}
+                onClick={handleChange}
                 className={styles.checkbox}
                 name="plain"
               />
@@ -111,7 +108,7 @@ const HeadFootwares = () => {
               Color Prints{" "}
               <input
                 type="checkbox"
-                onChange={handleChange}
+                onClick={handleChange}
                 value="color"
                 className={styles.checkbox}
                 name="prints"
@@ -121,7 +118,7 @@ const HeadFootwares = () => {
               Animal Prints{" "}
               <input
                 type="checkbox"
-                onChange={handleChange}
+                onClick={handleChange}
                 value="animalPrints"
                 className={styles.checkbox}
                 name="animalPrints"

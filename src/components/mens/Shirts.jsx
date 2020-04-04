@@ -47,7 +47,6 @@ const Shirts = () => {
         `http://localhost:3000/mens/shirts/?category=${category}`
       )
       const data = await response.json()
-      console.log(data.data)
       setShirts(data.data)
       setLoading(false)
     }
@@ -55,7 +54,6 @@ const Shirts = () => {
   }, [category])
 
   const handleChange = e => {
-    console.log(e.target.value)
     setCategory(e.target.value)
   }
 
@@ -90,7 +88,7 @@ const Shirts = () => {
               <input
                 type="checkbox"
                 value=""
-                onChange={handleChange}
+                onClick={handleChange}
                 className={styles.checkbox}
               />
             </label>
@@ -99,7 +97,7 @@ const Shirts = () => {
               <input
                 type="checkbox"
                 value="plain"
-                onChange={handleChange}
+                onClick={handleChange}
                 className={styles.checkbox}
                 name="plain"
               />
@@ -108,7 +106,7 @@ const Shirts = () => {
               Stripped{" "}
               <input
                 type="checkbox"
-                onChange={handleChange}
+                onClick={handleChange}
                 value="stripped"
                 className={styles.checkbox}
                 name="prints"
@@ -118,7 +116,7 @@ const Shirts = () => {
               Colorful{" "}
               <input
                 type="checkbox"
-                onChange={handleChange}
+                onClick={handleChange}
                 value="colorful"
                 className={styles.checkbox}
                 name="animalPrints"

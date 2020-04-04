@@ -47,7 +47,6 @@ const HoodiesJackets = () => {
         `http://localhost:3000/mens/hoodies/?category=${category}`
       )
       const data = await response.json()
-      console.log(data.product)
       setHoodies(data.product)
       setLoading(false)
     }
@@ -55,7 +54,6 @@ const HoodiesJackets = () => {
   }, [category])
 
   const handleChange = e => {
-    console.log(e.target.value)
     setCategory(e.target.value)
   }
 
@@ -63,7 +61,6 @@ const HoodiesJackets = () => {
     async function getPopularProducts() {
       const response = await fetch("http://localhost:3000/mens/hoodies/offers")
       const data = await response.json()
-      console.log(data.product)
       setPopular(data.product)
       setLoading(false)
     }
@@ -90,7 +87,7 @@ const HoodiesJackets = () => {
               <input
                 type="checkbox"
                 value=""
-                onChange={handleChange}
+                onClick={handleChange}
                 className={styles.checkbox}
               />
             </label>
@@ -99,7 +96,7 @@ const HoodiesJackets = () => {
               <input
                 type="checkbox"
                 value="plain"
-                onChange={handleChange}
+                onClick={handleChange}
                 className={styles.checkbox}
                 name="plain"
               />
@@ -108,7 +105,7 @@ const HoodiesJackets = () => {
               Stripped{" "}
               <input
                 type="checkbox"
-                onChange={handleChange}
+                onClick={handleChange}
                 value="stripped"
                 className={styles.checkbox}
                 name="prints"
