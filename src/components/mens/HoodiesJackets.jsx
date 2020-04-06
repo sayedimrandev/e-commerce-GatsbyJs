@@ -7,7 +7,7 @@ import Pagination from "../Pagination"
 const Fallback = ({ loading }) => {
   return (
     <section>
-      <ClipLoader size={150} color={"#123abc"} loading={loading} />
+      <ClipLoader size={100} color={"#123abc"} loading={loading} />
     </section>
   )
 }
@@ -36,26 +36,29 @@ const Offers = ({ offers }) => {
 const HoodiesJackets = () => {
   const [hoodies, setHoodies] = useState([])
   const [loading, setLoading] = useState(true)
-  const [category, setCategory] = useState("")
+  const [type, setType] = useState("")
+  const [size, setSize] = useState("")
+  const [colors, setColors] = useState("")
+  const [isStyle, setIsStyle] = useState("")
   const [popular, setPopular] = useState([])
+  const [isTypeClicked, setisTypeClicked] = useState(false)
+  const [isSizeClicked, setIsSizeClicked] = useState(false)
+  const [isColorsClicked, setIsColorsClicked] = useState(false)
+  const [isStylesClicked, setIsStylesClicked] = useState(false)
   const [postsPerPage] = useState(6)
   const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     async function getData() {
       const response = await fetch(
-        `http://localhost:3000/mens/hoodies/?category=${category}`
+        `http://localhost:3000/mens/hoodies/?type=${type}&size=${size}&colors=${colors}&styles=${isStyle}`
       )
       const data = await response.json()
       setHoodies(data.product)
       setLoading(false)
     }
     getData()
-  }, [category])
-
-  const handleChange = e => {
-    setCategory(e.target.value)
-  }
+  }, [type, size, colors, isStyle])
 
   useEffect(() => {
     async function getPopularProducts() {
@@ -66,6 +69,11 @@ const HoodiesJackets = () => {
     }
     getPopularProducts()
   }, [])
+
+  const handleTypeChange = e => setType(e.target.value)
+  const handleColorChange = e => setColors(e.target.value)
+  const handleSizeChange = e => setSize(e.target.value)
+  const handleStyleChange = e => setIsStyle(e.target.value)
 
   //Getting Current Posts
   const indexOfLastPost = currentPage * postsPerPage
@@ -80,37 +88,196 @@ const HoodiesJackets = () => {
       <h1 className={styles.heading}>Hoodies and Jackets Collections</h1>
       <section className={styles.mainContainer}>
         <section className={styles.filterContainer}>
-          <h1 className={styles.filterHeading}>Filters</h1>
+          <h1 className={styles.filterHeading}> FILTERS</h1>
           <section className={styles.filters}>
-            <label className={styles.label} htmlFor="plain">
-              All{" "}
-              <input
-                type="checkbox"
-                value=""
-                onClick={handleChange}
-                className={styles.checkbox}
-              />
-            </label>
-            <label className={styles.label} htmlFor="plain">
-              Plain{" "}
-              <input
-                type="checkbox"
-                value="plain"
-                onClick={handleChange}
-                className={styles.checkbox}
-                name="plain"
-              />
-            </label>
-            <label className={styles.label} htmlFor="strippedShirts">
-              Stripped{" "}
-              <input
-                type="checkbox"
-                onClick={handleChange}
-                value="stripped"
-                className={styles.checkbox}
-                name="prints"
-              />
-            </label>
+            <span className={styles.toggle}>
+              Types{" "}
+              <button
+                className={styles.arrow}
+                type="button"
+                onClick={() => setisTypeClicked(!isTypeClicked)}
+              >
+                &#x21b4;
+              </button>
+            </span>
+            {isTypeClicked && (
+              <section className={styles.typeFilter}>
+                <label className={styles.label} htmlFor="all">
+                  All{" "}
+                  <input
+                    type="checkbox"
+                    value=""
+                    onClick={handleTypeChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="jacket">
+                  Jacket{" "}
+                  <input
+                    type="checkbox"
+                    value="jacket"
+                    name="jacket"
+                    onClick={handleTypeChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="Hoodies">
+                  Hoodies{" "}
+                  <input
+                    type="checkbox"
+                    value="hoodie"
+                    name="hoodie"
+                    onClick={handleTypeChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+              </section>
+            )}
+          </section>
+          <section className={styles.filters}>
+            <span className={styles.toggle}>
+              Size{" "}
+              <button
+                className={styles.arrow}
+                type="button"
+                onClick={() => setIsSizeClicked(!isSizeClicked)}
+              >
+                &#x21b4;
+              </button>
+            </span>
+            {isSizeClicked && (
+              <section className={styles.typeFilter}>
+                <label className={styles.label} htmlFor="all">
+                  All{" "}
+                  <input
+                    type="checkbox"
+                    value=""
+                    onClick={handleSizeChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="medium">
+                  Medium{" "}
+                  <input
+                    type="checkbox"
+                    value="m"
+                    name="m"
+                    onClick={handleSizeChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+              </section>
+            )}
+          </section>
+          <section className={styles.filters}>
+            <span className={styles.toggle}>
+              Colors{" "}
+              <button
+                className={styles.arrow}
+                type="button"
+                onClick={() => setIsColorsClicked(!isColorsClicked)}
+              >
+                &#x21b4;
+              </button>
+            </span>
+            {isColorsClicked && (
+              <section className={styles.typeFilter}>
+                <label className={styles.label} htmlFor="all">
+                  All{" "}
+                  <input
+                    type="checkbox"
+                    value=""
+                    onClick={handleColorChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="white">
+                  White{" "}
+                  <input
+                    type="checkbox"
+                    value="white"
+                    name="white"
+                    onClick={handleColorChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="black">
+                  Black{" "}
+                  <input
+                    type="checkbox"
+                    value="black"
+                    name="black"
+                    onClick={handleColorChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="brown">
+                  Brown{" "}
+                  <input
+                    type="checkbox"
+                    value="brown"
+                    name="brown"
+                    onClick={handleColorChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="blue">
+                  Blue{" "}
+                  <input
+                    type="checkbox"
+                    value="blue"
+                    name="blue"
+                    onClick={handleColorChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+              </section>
+            )}
+          </section>
+          <section className={styles.filters}>
+            <span className={styles.toggle}>
+              Styles{" "}
+              <button
+                className={styles.arrow}
+                type="button"
+                onClick={() => setIsStylesClicked(!isStylesClicked)}
+              >
+                &#x21b4;
+              </button>
+            </span>
+            {isStylesClicked && (
+              <section className={styles.typeFilter}>
+                <label className={styles.label} htmlFor="all">
+                  All{" "}
+                  <input
+                    type="checkbox"
+                    value=""
+                    onClick={handleStyleChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="plain">
+                  Plain{" "}
+                  <input
+                    type="checkbox"
+                    value="plain"
+                    name="plain"
+                    onClick={handleStyleChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="prints">
+                  Prints{" "}
+                  <input
+                    type="checkbox"
+                    value="prints"
+                    name="prints"
+                    onClick={handleStyleChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+              </section>
+            )}
           </section>
         </section>
         <section className={styles.productContainer}>
@@ -121,7 +288,7 @@ const HoodiesJackets = () => {
               <section key={hoodie._id}>
                 <Card
                   title={hoodie.name}
-                  link={`/products/mens/hoodies/${hoodie._id}`}
+                  link={`/products/mens/hoodies-jackets/${hoodie._id}`}
                   src={hoodie.Image}
                   price={hoodie.price}
                 />
@@ -149,7 +316,7 @@ const HoodiesJackets = () => {
                   src={item.Image}
                   title={item.name}
                   price={item.price}
-                  link={`/products/mens/hoodies/${item._id}`}
+                  link={`/products/mens/hoodies-jackets/${item._id}`}
                 />
                 <Offers key={item._id} offers={item.offers} />
               </section>

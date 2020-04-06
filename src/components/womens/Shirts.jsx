@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styles from "../../styles/womens/shirts.module.css"
 import ClipLoader from "react-spinners/ClipLoader"
+import Pagination from "../Pagination"
 
 const Fallback = ({ loading }) => {
-  return (
+  return ( 
     <section>
       <ClipLoader size={150} color={"#123abc"} loading={loading} />
     </section>
@@ -24,37 +25,63 @@ const Card = ({ src, title, link, price }) => {
   )
 }
 
+const Offers = ({ offers }) => {
+  return (
+    <section className={styles.offerContainer}>
+      <h1 className={styles.offers}> {offers} OFF </h1>
+    </section>
+  )
+}
+
 const Shirts = () => {
   const [shirts, setShirts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [type, setType] = useState("")
   const [size, setSize] = useState("")
   const [colors, setColors] = useState("")
   const [isStyle, setIsStyle] = useState("")
+  const [popular, setPopular] = useState([])
   const [isTypeClicked, setisTypeClicked] = useState(false)
   const [isSizeClicked, setIsSizeClicked] = useState(false)
   const [isColorsClicked, setIsColorsClicked] = useState(false)
   const [isStylesClicked, setIsStylesClicked] = useState(false)
+  const [postsPerPage] = useState(6)
+  const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     async function fetchData() {
+      setLoading(true)
       const response = await fetch(
         `http://localhost:3000/womens/shirts/?type=${type}&size=${size}&colors=${colors}&styles=${isStyle}`
       )
       const data = await response.json()
-      console.log(data.product)
       setShirts(data.product)
       setLoading(false)
     }
     fetchData()
   }, [type, size, colors, isStyle])
 
-  const handleChange = e => {
-    setType(e.target.value)
-    setSize(e.target.value)
-    setColors(e.target.value)
-    setIsStyle(e.target.value)
-  }
+  useEffect(() => {
+    async function getOffers() {
+      setLoading(true)
+      const response = await fetch(`http://localhost:3000/womens/shirts/offers`)
+      const data = await response.json()
+      setPopular(data.product)
+      setLoading(false)
+    }
+    getOffers()
+  }, [])
+
+  const handleTypeChange = e => setType(e.target.value)
+  const handleColorChange = e => setColors(e.target.value)
+  const handleSizeChange = e => setSize(e.target.value)
+  const handleStyleChange = e => setIsStyle(e.target.value)
+
+  const indexOfLastPost = currentPage * postsPerPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+  const currentPosts = shirts.slice(indexOfFirstPost, indexOfLastPost)
+
+  const paginate = number => setCurrentPage(number)
 
   return (
     <section className={styles.main}>
@@ -80,7 +107,7 @@ const Shirts = () => {
                   <input
                     type="checkbox"
                     value=""
-                    onClick={handleChange}
+                    onClick={handleTypeChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -88,9 +115,9 @@ const Shirts = () => {
                   Shirts{" "}
                   <input
                     type="checkbox"
-                    value="shirts"
+                    value="shirt"
                     name="shirts"
-                    onClick={handleChange}
+                    onClick={handleTypeChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -98,9 +125,9 @@ const Shirts = () => {
                   T-Shirts{" "}
                   <input
                     type="checkbox"
-                    value="tshirts"
+                    value="tshirt"
                     name="tshirts"
-                    onClick={handleChange}
+                    onClick={handleTypeChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -110,7 +137,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="top"
                     name="top"
-                    onClick={handleChange}
+                    onClick={handleTypeChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -135,7 +162,7 @@ const Shirts = () => {
                   <input
                     type="checkbox"
                     value=""
-                    onClick={handleChange}
+                    onClick={handleSizeChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -145,7 +172,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="m"
                     name="m"
-                    onClick={handleChange}
+                    onClick={handleSizeChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -155,7 +182,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="L"
                     name="L"
-                    onClick={handleChange}
+                    onClick={handleSizeChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -180,7 +207,7 @@ const Shirts = () => {
                   <input
                     type="checkbox"
                     value=""
-                    onClick={handleChange}
+                    onClick={handleColorChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -190,7 +217,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="white"
                     name="white"
-                    onClick={handleChange}
+                    onClick={handleColorChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -200,7 +227,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="black"
                     name="black"
-                    onClick={handleChange}
+                    onClick={handleColorChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -210,7 +237,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="yellow"
                     name="yellow"
-                    onClick={handleChange}
+                    onClick={handleColorChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -220,7 +247,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="red"
                     name="red"
-                    onClick={handleChange}
+                    onClick={handleColorChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -245,7 +272,7 @@ const Shirts = () => {
                   <input
                     type="checkbox"
                     value=""
-                    onClick={handleChange}
+                    onClick={handleStyleChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -255,7 +282,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="stripped"
                     name="stripped"
-                    onClick={handleChange}
+                    onClick={handleStyleChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -265,7 +292,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="plain"
                     name="plain"
-                    onClick={handleChange}
+                    onClick={handleStyleChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -275,7 +302,7 @@ const Shirts = () => {
                     type="checkbox"
                     value="prints"
                     name="prints"
-                    onClick={handleChange}
+                    onClick={handleStyleChange}
                     className={styles.checkbox}
                   />
                 </label>
@@ -287,7 +314,7 @@ const Shirts = () => {
           {loading ? (
             <Fallback loading={loading} />
           ) : (
-            shirts.map(shirt => (
+            currentPosts.map(shirt => (
               <section key={shirt._id}>
                 <Card
                   title={shirt.name}
@@ -295,6 +322,33 @@ const Shirts = () => {
                   src={shirt.Image}
                   price={shirt.price}
                 />
+              </section>
+            ))
+          )}
+        </section>
+      </section>
+      <section className={styles.paginationContainer}>
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={shirts.length}
+          paginate={paginate}
+        />
+      </section>
+      <section className={styles.popularContainer}>
+        <h1 className={styles.header}> Top Discouts</h1>
+        <section className={styles.cardContainer}>
+          {loading ? (
+            <Fallback loading={loading} />
+          ) : (
+            popular.map(item => (
+              <section key={item._id}>
+                <Card
+                  src={item.Image}
+                  title={item.name}
+                  price={item.price}
+                  link={`/products/womens/shirts-Tshirts/${item._id}`}
+                />
+                <Offers key={item._id} offers={item.offers} />
               </section>
             ))
           )}
