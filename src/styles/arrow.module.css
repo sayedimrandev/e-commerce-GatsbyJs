@@ -26,3 +26,16 @@
   padding: 0px;
   cursor: pointer;
 }
+
+@media (max-width: 475px) {
+  .container {
+    right: 20%;
+    top: 90%;
+  }
+
+  .icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    transform: none;
+  }
+}

@@ -16,8 +16,25 @@
   flex-direction: column;
   margin: 10px 0 0 20px;
   overflow: auto;
-  height: 100%;
+  height: 100vh;
+  padding-bottom: 1.5rem;
   flex: 1;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popular-container {
+  padding: 10px 0px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .product-container {
@@ -25,6 +42,17 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex: 3;
+}
+
+.offer-container {
+  text-align: center;
+}
+
+.offers {
+  font-size: 2rem;
+  padding: 10px 0px;
+  margin: 0;
+  color: rgb(2, 68, 88);
 }
 
 .filters {
@@ -110,6 +138,13 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.header {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 20px 0px;
+}
+
 .label {
   display: flex;
   justify-content: space-between;
@@ -121,4 +156,27 @@
 .checkbox {
   width: 20px;
   height: 18px;
+}
+
+@media (max-width: 768px) {
+  .filter-container {
+    height: 80vh;
+    flex: 1;
+  }
+
+  .product-container {
+    flex: 2;
+  }
+}
+
+@media (max-width: 475px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-container {
+    margin-bottom: 2rem;
+    padding: 0 70px;
+  }
 }
