@@ -12,10 +12,12 @@
 .filter-container {
   background-color: rgb(213, 221, 221);
   padding: 0px 15px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-left: 40px;
+  margin: 10px 0 0 20px;
+  overflow: auto;
+  height: 100vh;
+  padding-bottom: 1.5rem;
   flex: 1;
 }
 
@@ -42,17 +44,6 @@
   flex: 3;
 }
 
-.filters {
-  display: flex;
-  flex-direction: column;
-}
-
-.filter-heading {
-  font-size: 1.5rem;
-  padding: 0;
-  margin: 20px 0px;
-}
-
 .offer-container {
   text-align: center;
 }
@@ -64,9 +55,22 @@
   color: rgb(2, 68, 88);
 }
 
-.label {
+.filters {
+  padding: 20px 10px 30px 30px;
+}
+
+.type-filter {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  margin-top: 20px;
+}
+
+.filter-heading {
+  text-align: center;
   font-size: 1.5rem;
-  padding: 10px 0px;
+  padding: 0;
+  margin: 20px 0px;
 }
 
 .card {
@@ -101,7 +105,30 @@
   border-radius: 5px;
   cursor: pointer;
   margin: 5px 0px;
+  background-color: rgba(0, 0, 0, 0.788);
+  color: #fff;
+}
+
+.button:hover {
   background-color: black;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 22px;
+}
+
+.arrow {
+  border: none;
+  background-color: rgb(213, 221, 221);
+  font-size: 28px;
+  cursor: pointer;
+  outline: none;
+}
+
+.arrow:hover {
+  background-color: rgb(3, 111, 121);
   color: #fff;
 }
 
@@ -118,7 +145,56 @@
   padding: 20px 0px;
 }
 
+.label {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 50px;
+  font-size: 1.2rem;
+  padding: 10px 0px;
+}
+
 .checkbox {
   width: 20px;
   height: 18px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 10px 0;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-container {
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+
+  .pagination-container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 475px) {
+  .main {
+    padding: 10x 0;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-container {
+    margin: 0;
+    margin-bottom: 2rem;
+    width: 80%;
+  }
+
+  .pagination-container {
+    width: 95%;
+  }
 }
