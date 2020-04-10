@@ -44,7 +44,7 @@ const HeadFootwares = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:3000/mens/headwares/?category=${category}`
+        `https://evening-scrubland-37768.herokuapp.com/mens/headwares/?category=${category}`
       )
       const data = await response.json()
       setProducts(data.product)
@@ -60,7 +60,7 @@ const HeadFootwares = () => {
   useEffect(() => {
     async function getPopularProducts() {
       const response = await fetch(
-        "http://localhost:3000/mens/headwares/offers"
+        "https://evening-scrubland-37768.herokuapp.com/mens/headwares/offers"
       )
       const data = await response.json()
       setPopular(data.product)
