@@ -11,10 +11,11 @@
 .page-items {
   list-style-type: none;
   background-color: #254441;
-  margin-left: 10px;
+  margin: 0 10px;
   padding: 10px;
   cursor: pointer;
 }
+
 .page-items:hover {
   background-color: #3e8878;
 }

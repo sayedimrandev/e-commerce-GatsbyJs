@@ -16,7 +16,9 @@ const HeadwareDetails = ({ id }) => {
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch(`http://localhost:3000/mens/headwares/${id}`)
+      const response = await fetch(
+        `https://evening-scrubland-37768.herokuapp.com/mens/headwares/${id}`
+      )
       const data = await response.json()
       console.log(data.product)
       setHeadware(data.product)

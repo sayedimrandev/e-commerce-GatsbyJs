@@ -30,3 +30,26 @@
 .button:hover {
   background-color: tomato;
 }
+
+@media (max-width: 768px) {
+  .input {
+    margin-bottom: 10px;
+  }
+
+  .content,
+  .subscribe {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 475px) {
+  .input {
+    margin-bottom: 10px;
+  }
+
+  .content,
+  .subscribe {
+    font-size: 22px;
+    padding: 0 2px 0 10px;
+  }
+}

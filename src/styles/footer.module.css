@@ -46,7 +46,27 @@ footer {
   margin-top: 12px;
   background-color: #161b1b9a;
   text-align: center;
-  padding: 8px 0px;
+  padding: 8px 5px;
   color: #fff;
   font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 475px) {
+  .info-container {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  .quick-links,
+  .collection-links,
+  .info-links {
+    margin-bottom: 20px;
+  }
+
+  .links {
+    margin-top: 0 0 20px 0;
+  }
 }

@@ -39,15 +39,14 @@ const Accessories = () => {
   const [category, setCategory] = useState("")
   const [popular, setPopular] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage, setPostsPerPage] = useState(3)
+  const [postsPerPage] = useState(3)
 
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:3000/mens/accessories/?category=${category}`
+        `https://evening-scrubland-37768.herokuapp.com/mens/accessories/?category=${category}`
       )
       const data = await response.json()
-      console.log(data.product)
       setItems(data.product)
       setLoading(false)
     }
@@ -61,10 +60,9 @@ const Accessories = () => {
   useEffect(() => {
     async function getPopularProducts() {
       const response = await fetch(
-        "http://localhost:3000/mens/accessories/offers"
+        "https://evening-scrubland-37768.herokuapp.com/mens/accessories/offers"
       )
       const data = await response.json()
-      console.log(data.product)
       setPopular(data.product)
       setLoading(false)
     }
@@ -89,7 +87,7 @@ const Accessories = () => {
               <input
                 type="checkbox"
                 value=""
-                onChange={handleChange}
+                onClick={handleChange}
                 className={styles.checkbox}
               />
             </label>
@@ -98,7 +96,7 @@ const Accessories = () => {
               <input
                 type="checkbox"
                 value="goggle"
-                onChange={handleChange}
+                onClick={handleChange}
                 className={styles.checkbox}
               />
             </label>
@@ -106,7 +104,7 @@ const Accessories = () => {
               Belts-Bags{" "}
               <input
                 type="checkbox"
-                onChange={handleChange}
+                onClick={handleChange}
                 value="belts"
                 className={styles.checkbox}
               />
@@ -115,7 +113,7 @@ const Accessories = () => {
               Rings-Bracelets{" "}
               <input
                 type="checkbox"
-                onChange={handleChange}
+                onClick={handleChange}
                 value="rings"
                 className={styles.checkbox}
               />
@@ -124,7 +122,7 @@ const Accessories = () => {
               Watch-Headphones{" "}
               <input
                 type="checkbox"
-                onChange={handleChange}
+                onClick={handleChange}
                 value="watch"
                 className={styles.checkbox}
               />

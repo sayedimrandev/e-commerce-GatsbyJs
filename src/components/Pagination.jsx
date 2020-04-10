@@ -10,7 +10,6 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
 
   return (
     <section className={styles.main}>
-      {/* <nav className={styles.nav}> */}
       <ul className={styles.pagination}>
         {pageNumbers.map(number => (
           <li key={number} className={styles.pageItems}>
@@ -24,7 +23,6 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
           </li>
         ))}
       </ul>
-      {/* </nav> */}
     </section>
   )
 }

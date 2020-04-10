@@ -83,7 +83,7 @@
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   background-color: black;
 }
 
@@ -97,4 +97,26 @@ button:hover {
 .hero-container {
   margin-left: 70px;
   padding-top: 25px;
+}
+
+@media (max-width: 475px) {
+  .post-container {
+    margin-right: 2rem;
+  }
+
+  .background {
+    padding: 10rem 11rem;
+  }
+
+  .single-post {
+    width: 18rem;
+  }
+
+  .card {
+    width: 18rem;
+  }
+
+  .hero-container {
+    margin-left: 20px;
+  }
 }
