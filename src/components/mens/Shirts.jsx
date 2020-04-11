@@ -66,7 +66,6 @@ const Shirts = () => {
         "https://evening-scrubland-37768.herokuapp.com/mens/shirts/offers"
       )
       const data = await response.json()
-      console.log(data.product)
       setPopular(data.product)
       setLoading(false)
     }
