@@ -135,7 +135,7 @@ const Accessories = () => {
                   Rings{" "}
                   <input
                     type="checkbox"
-                    value="rings"
+                    value="ring"
                     name="rings"
                     onClick={handleTypeChange}
                     className={styles.checkbox}
@@ -251,12 +251,22 @@ const Accessories = () => {
                     className={styles.checkbox}
                   />
                 </label>
-                <label className={styles.label} htmlFor="blue">
+                <label className={styles.label} htmlFor="yellow">
                   Yellow{" "}
                   <input
                     type="checkbox"
-                    value="blue"
-                    name="blue"
+                    value="yellow"
+                    name="yellow"
+                    onClick={handleColorChange}
+                    className={styles.checkbox}
+                  />
+                </label>
+                <label className={styles.label} htmlFor="colorful">
+                  Colorful{" "}
+                  <input
+                    type="checkbox"
+                    value="colorful"
+                    name="colorful"
                     onClick={handleColorChange}
                     className={styles.checkbox}
                   />
