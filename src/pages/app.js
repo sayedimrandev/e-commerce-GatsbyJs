@@ -8,12 +8,12 @@ import HeadFootwares from "../components/mens/HeadFootwares"
 import MenHeadwareDetails from "../components/mens/HeadwareDetails"
 import Accessories from "../components/mens/Accessories"
 import MenAccessoriesDetails from "../components/mens/AccessoriesDetails"
-import Tops from "../components/womens/Tops"
 import WomenShirts from "../components/womens/Shirts"
 import WomenHoodiesJackets from "../components/womens/JacketsHoodies"
 import HeadScarves from "../components/womens/HeadScarves"
-import FootwaresSandals from "../components/womens/Footwares"
+import HeadScarvesDetails from "../components/womens/HeadScarfDetails"
 import WomenAccessories from "../components/womens/Accessories"
+import WomenAccessoriesDetails from "../components/womens/AccessoriesDetails"
 import MenSingleHoodie from "../components/mens/SingleHoodie"
 import WomenShirtDetails from "../components/womens/ShirtDetails"
 import WomenJacketDetails from "../components/womens/JacketDetails"
@@ -30,14 +30,14 @@ const app = () => {
         <MenHeadwareDetails path="/products/mens/head-footwares/:id" />
         <Accessories path="/products/mens/accessories" />
         <MenAccessoriesDetails path="/products/mens/accessories/:id" />
-        <Tops path="/products/womens/tops" />
         <WomenShirts path="/products/womens/shirts-Tshirts" />
         <WomenShirtDetails path="/products/womens/shirts-Tshirts/:id" />
         <WomenHoodiesJackets path="/products/womens/hoodies-jackets" />
         <WomenJacketDetails path="/products/womens/hoodies-jackets/:id" />
         <HeadScarves path="/products/womens/headwares-scarves" />
-        <FootwaresSandals path="/products/womens/footwares-sandals" />
+        <HeadScarvesDetails path="/products/womens/headwares-scarves/:id" />
         <WomenAccessories path="/products/womens/accessories" />
+        <WomenAccessoriesDetails path="/products/womens/accessories/:id" />
       </Router>
     </Layout>
   )
