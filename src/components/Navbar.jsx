@@ -29,14 +29,11 @@ const Navbar = () => {
             <input type="checkbox" id="drop-1" />
             <ul>
               <li>
-                <Link to="/products/womens/tops">Tops</Link>
-              </li>
-              <li>
                 <Link to="/products/womens/shirts-Tshirts">Shirts-Tshirts</Link>
               </li>
               <li>
                 <Link to="/products/womens/headwares-scarves">
-                  Headwares-Scarves
+                  Head-Footwares
                 </Link>
               </li>
               <li>
