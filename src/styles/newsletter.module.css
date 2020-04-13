@@ -11,6 +11,10 @@
   font-size: 24px;
 }
 
+.input {
+  width: 8rem;
+}
+
 .input,
 .button {
   padding: 8px;
@@ -25,31 +29,19 @@
   font-size: 18px;
   background-color: rgb(172, 62, 62);
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .button:hover {
   background-color: tomato;
 }
 
-@media (max-width: 768px) {
-  .input {
-    margin-bottom: 10px;
-  }
-
-  .content,
-  .subscribe {
-    padding: 0 30px;
-  }
-}
-
 @media (max-width: 475px) {
-  .input {
-    margin-bottom: 10px;
+  .container {
+    flex-direction: column;
   }
 
-  .content,
   .subscribe {
-    font-size: 22px;
-    padding: 0 2px 0 10px;
+    margin: 10px 0;
   }
 }

@@ -62,3 +62,9 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+@media (max-width: 475px) {
+  .card {
+    width: 20rem;
+  }
+}

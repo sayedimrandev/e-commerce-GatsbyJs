@@ -22,6 +22,7 @@ nav {
   margin: 0;
   padding: 0;
   background-color: #254441;
+
   /* z-index: 3; */
 }
 
@@ -50,7 +51,7 @@ nav:after {
  * and adding "position:reltive" */
 nav ul {
   float: right;
-  padding: 0;
+  padding: 0 20px 0 0;
   margin: 0;
   list-style: none;
   position: relative;

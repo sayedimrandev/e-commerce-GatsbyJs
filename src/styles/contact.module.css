@@ -1,0 +1,51 @@
+.container {
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  background-color: rgb(174, 194, 174);
+}
+
+.register-form {
+  max-width: 40%;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.input {
+  width: 100%;
+  height: 20px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.sentButton,
+.sendButton {
+  font-size: 1.2rem;
+  padding: 6px;
+  width: 120px;
+  border-radius: 3px;
+  border: none;
+  margin: 20px auto;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.849);
+  color: #fff;
+}
+
+.sendButton:hover,
+.sentButton:hover {
+  background-color: black;
+}
+
+.sendButton {
+  cursor: pointer;
+}
+
+.sentButton {
+  cursor: not-allowed;
+}
