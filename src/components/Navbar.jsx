@@ -14,7 +14,12 @@ const Navbar = () => {
         </Link>
         <label
           htmlFor="drop"
-          style={{ fontSize: `3rem`, textAlign: `right` }}
+          style={{
+            fontSize: `3rem`,
+            textAlign: `right`,
+            padding: "10px 0",
+            margin: "0",
+          }}
           className="toggle"
         >
           &#x21b4;
