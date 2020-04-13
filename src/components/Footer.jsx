@@ -33,41 +33,41 @@ const Footer = () => {
         <section className={footerStyles.infoContainer}>
           <section className={footerStyles.quickLinks}>
             <h1 className={footerStyles.title}>Quick Links</h1>
-            <Link className={footerStyles.links} to="#">
+            <Link className={footerStyles.links} to="/mens">
               Shop Mens
             </Link>
-            <Link className={footerStyles.links} to="#">
+            <Link className={footerStyles.links} to="/womens">
               Shop Womens
-            </Link>
-            <Link className={footerStyles.links} to="#">
-              Shop Accessories
             </Link>
           </section>
           <section className={footerStyles.infoLinks}>
             <h1 className={footerStyles.title}>Info</h1>
-            <Link className={footerStyles.links} to="#">
+            <Link className={footerStyles.links} to="/contact">
               Contact-Us
             </Link>
-            <Link className={footerStyles.links} to="#">
+            <Link className={footerStyles.links} to="/blogs">
               Blogs
-            </Link>
-            <Link className={footerStyles.links} to="#">
-              About Us
             </Link>
           </section>
           <section className={footerStyles.collectionLinks}>
             <h1 className={footerStyles.title}>Collections</h1>
-            <Link className={footerStyles.links} to="#">
+            <Link
+              className={footerStyles.links}
+              to="/products/mens/shirts-Tshirts"
+            >
               Mens Shirts
             </Link>
-            <Link className={footerStyles.links} to="#">
-              Womens Tops
+            <Link
+              className={footerStyles.links}
+              to="/products/womens/accessories"
+            >
+              Womens Accessories
             </Link>
-            <Link className={footerStyles.links} to="#">
-              Jackets
-            </Link>
-            <Link className={footerStyles.links} to="#">
-              Head-Footwares
+            <Link
+              className={footerStyles.links}
+              to="/products/mens/accessories"
+            >
+              Mens Accessories
             </Link>
           </section>
         </section>
