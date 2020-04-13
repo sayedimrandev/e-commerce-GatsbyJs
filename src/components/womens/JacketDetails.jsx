@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ClipLoader from "react-spinners/ClipLoader"
-import styles from "../../styles/mens/shirtdetail.module.css"
+import styles from "../../styles/womens/headwareDetails.module.css"
 
 const Fallback = ({ loading }) => {
   return (
@@ -29,12 +29,12 @@ const JacketDetails = ({ id }) => {
 
   return (
     <section className={styles.main}>
-      <h1 className={styles.heading}>Hoodie Details</h1>
+      <h1 className={styles.heading}>{jacket.name} Details</h1>
       {loading ? (
         <Fallback loading={loading} />
       ) : (
         <section className={styles.container} key={jacket._id}>
-          <img src={jacket.Image} alt="productImage" />
+          <img className={styles.Image} src={jacket.Image} alt="productImage" />
           <h1 className={styles.title}>{jacket.name}</h1>
           <p className={styles.price}>{jacket.price}&#x20B9;</p>
           <p className={styles.description}>{jacket.description}</p>

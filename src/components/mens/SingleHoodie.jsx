@@ -28,12 +28,16 @@ const SingleHoodie = ({ id }) => {
 
   return (
     <section className={styles.main}>
-      <h1 className={styles.heading}>Hodies and Jackets Details</h1>
+      <h1 className={styles.heading}>{product.name} Details</h1>
       {loading ? (
         <Fallback loading={loading} />
       ) : (
         <section className={styles.container} key={product._id}>
-          <img src={product.Image} alt="productImage" />
+          <img
+            className={styles.Image}
+            src={product.Image}
+            alt="productImage"
+          />
           <h1 className={styles.title}>{product.name}</h1>
           <p className={styles.price}>{product.price}&#x20B9;</p>
           <p className={styles.description}>{product.description}</p>

@@ -28,12 +28,16 @@ const HeadwareDetails = ({ id }) => {
   }, [])
   return (
     <section className={styles.main}>
-      <h1 className={styles.heading}>Headware and Footware Details</h1>
+      <h1 className={styles.heading}>{headware.name} Details</h1>
       {loading ? (
         <Fallback loading={loading} />
       ) : (
         <section className={styles.container} key={headware._id}>
-          <img src={headware.Image} alt="productImage" />
+          <img
+            className={styles.Image}
+            src={headware.Image}
+            alt="productImage"
+          />
           <h1 className={styles.title}>{headware.name}</h1>
           <p className={styles.price}>{headware.price}&#x20B9;</p>
           <p className={styles.description}>{headware.description}</p>

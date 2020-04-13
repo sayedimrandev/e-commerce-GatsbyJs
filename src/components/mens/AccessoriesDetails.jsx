@@ -29,12 +29,12 @@ const AccessoriesDetails = ({ id }) => {
 
   return (
     <section className={styles.main}>
-      <h1 className={styles.heading}>Accessories Details</h1>
+      <h1 className={styles.heading}>{item.name} Details</h1>
       {loading ? (
         <Fallback loading={loading} />
       ) : (
         <section className={styles.container} key={item._id}>
-          <img src={item.Image} alt="productImage" />
+          <img className={styles.Image} src={item.Image} alt="productImage" />
           <h1 className={styles.title}>{item.name}</h1>
           <p className={styles.price}>{item.price}&#x20B9;</p>
           <p className={styles.description}>{item.description}</p>

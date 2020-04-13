@@ -33,7 +33,11 @@ const AccessoriesDetails = ({ id }) => {
         <Fallback loading={loading} />
       ) : (
         <section className={styles.container} key={accessories._id}>
-          <img src={accessories.Image} alt="productImage" />
+          <img
+            className={styles.Image}
+            src={accessories.Image}
+            alt="productImage"
+          />
           <h1 className={styles.title}>{accessories.name}</h1>
           <p className={styles.price}>{accessories.price}&#x20B9;</p>
           <p className={styles.description}>{accessories.description}</p>
