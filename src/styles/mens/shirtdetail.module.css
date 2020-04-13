@@ -1,5 +1,7 @@
-/* .main {
-} */
+.main {
+  background-color: rgba(174, 194, 174, 0.863);
+  padding: 10px 0;
+}
 
 .container {
   display: flex;
@@ -10,14 +12,14 @@
 }
 
 .heading {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
 }
 
 .title {
-  font-size: 1.5rem;
-  margin: 0;
+  font-size: 1.8rem;
+  margin: 10px 0 0 0;
   padding: 20px 0px 10px 0px;
 }
 
@@ -29,6 +31,38 @@
 .description {
   font-size: 24px;
   text-align: justify;
-  padding: 0px 120px;
-  line-height: 1.5;
+  padding: 0px 100px;
+  line-height: 1.6;
+}
+
+.Image {
+  height: 400px;
+  width: 600px;
+}
+
+@media (max-width: 768px) {
+  .Image {
+    width: 600px;
+    height: 500px;
+  }
+
+  .description {
+    padding: 0 40px;
+    font-size: 26px;
+  }
+
+  .heading {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 475px) {
+  .Image {
+    width: 350px;
+    height: 300px;
+  }
+
+  .description {
+    padding: 0 20px;
+  }
 }
