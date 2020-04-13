@@ -150,9 +150,10 @@ li > a:only-child:after {
 
   /* Stylinf the toggle lable */
   .toggle {
+    /* width: 100%; */
     display: block;
     background-color: #254441;
-    padding: 14px 80px;
+    padding: 14px 20px;
     color: #fff;
     font-size: 17px;
     text-decoration: none;
@@ -177,23 +178,24 @@ li > a:only-child:after {
     text-align: center;
   }
 
-  nav ul ul .toggle,
+  /* nav ul ul .toggle,
   nav ul ul a {
-    padding: 0 40px;
-  }
-
-  nav ul ul ul a {
     padding: 0 80px;
-  }
+  } */
 
+  /* nav ul ul ul a {
+    padding: 0 80px;
+  } */
+  /* 
   nav a:hover,
   nav ul ul ul a {
     background-color: #3e8878;
-  }
+  } */
 
   nav ul li ul li .toggle,
   nav ul ul a,
   nav ul ul ul a {
+    width: 100%;
     padding: 14px 20px;
     color: #fff;
     font-size: 17px;
@@ -234,6 +236,6 @@ li > a:only-child:after {
 @media all and (max-width: 330px) {
   nav ul li {
     display: block;
-    width: 94%;
+    width: 100%;
   }
 }
