@@ -10,3 +10,5 @@
 ### View the Hosted Site
 
 ### [happishop](https://happishop.netlify.app/)
+
+![happishop](./src/static/happishop.png)
