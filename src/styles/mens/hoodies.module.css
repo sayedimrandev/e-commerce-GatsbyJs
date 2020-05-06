@@ -1,7 +1,8 @@
 .main {
-  background-color: rgb(174, 194, 174);
-  margin: 0;
-  padding: 20px;
+  /* margin: 0; */
+  padding: 20px 0px;
+  max-width: 1160px;
+  margin: 0 auto;
 }
 
 .main-container {
@@ -16,7 +17,7 @@
   flex-direction: column;
   margin: 10px 0 0 20px;
   overflow: auto;
-  height: 100vh;
+  /* height: 100vh; */
   padding-bottom: 1.5rem;
   flex: 1;
 }
@@ -28,7 +29,7 @@
 }
 
 .popular-container {
-  padding: 10px 0px;
+  padding: 10px 10px;
 }
 
 .card-container {

@@ -1,6 +1,6 @@
 .main {
-  background-color: rgb(174, 194, 174);
-  margin: 0;
+  max-width: 1160px;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -16,7 +16,6 @@
   flex-direction: column;
   margin: 10px 0 0 20px;
   overflow: auto;
-  height: 100vh;
   padding-bottom: 1.5rem;
   flex: 1;
 }
